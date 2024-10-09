@@ -14,6 +14,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 body {
   font-family: "Work Sans", sans-serif;
@@ -62,11 +63,12 @@ body {
 
 }
 @media (max-width: 767px) {
-    .special-heading {
+    .special-heading  {
         font-size: 60px;
     }
     .special-heading + p {
         margin-top: -20px;
+        font-size: 10px;
     }
 }
 /* End Components */
@@ -131,7 +133,7 @@ body {
     border-color: transparent transparent #f6f6f6 transparent;
     position: absolute;
     right: 0;
-    top: -20px;
+    top: -20px; 
 }
 .header .links:hover ul {
     display: block;
@@ -151,7 +153,7 @@ body {
     border-bottom: 1px solid #ddd;
 }
 .header .links ul li a:hover {
-    padding: 30px;
+    padding-left: 30px;
 }
 /* End Header */
 /* Start Landing Section */
@@ -163,21 +165,21 @@ body {
 }
 .landing .intro-text {
     position: absolute;
-    right: 50%;
-    top: 20%;
-    transform: translate(50%, 50%);
+    left: 50%;
+    top: 50%;
     text-align: center;
-    width: 500px;
+    transform: translate(-50%, -50%);
+    width: 320px;
     max-width: 100%;
 }
 .landing .intro-text h1 {
     margin: 0;
     font-weight: bold;
-    font-size: 4.5rem;
+    font-size: 50px;
     color: var(--main-color);
 }
 .landing .intro-text p {
-    font-size: 2rem;
+    font-size: 19px;
     line-height: 1.8;
 }
 /* Start Landing Section */
@@ -196,12 +198,12 @@ body {
     text-align: center;
     line-height: 2;
     font-size: 1.5rem;
-    padding: 20px;
+    /* padding: 20px; */
     /* border-radius: 15px; */
     /* background-color: #eeee; */
 }
 .features .feat h3 {
-    font-weight: 800;
+    font-size: 20px;
     margin: 30px 0;
 }
 .features .feat p {
@@ -236,6 +238,7 @@ body {
 .services .services-content .srv i {
   color: var(--main-color);
   font-size: 3rem;
+  padding: 20px;
   flex-basis: 60px;
 }
 .services .services-content .srv .text {
@@ -325,11 +328,12 @@ body {
     position: relative;
     width: 250px;
     height: 375px;
+    margin-bottom: 100px;
 }
 .about .about-content .image img {
-    width: 250px;
-    height: 375px;
+    max-width: 100%;
 }
+
 @media (max-width: 1197px) {
     .about .about-content .image {
         display: none;
@@ -362,9 +366,84 @@ body {
 .about .about-content .text {
     flex-basis: calc(100% - 500px);
 }
+.about .about-content .text p:first-of-type {
+    font-weight: bold;
+    line-height: 2;
+    margin-bottom: 50px;
+}
+.about .about-content .text hr {
+    width: 50%;
+    display: inline-block;
+    height: 2px;
+    border: 0;
+    background-color: var(--main-color);
+}
+.about .about-content .text p:last-of-type {
+    color: var(--text-card-color);
+    line-height: 1.6;
+
+}
 @media (max-width: 1197px) {
-    .about .about-content .text {
-        display: inline-block;
+    .about .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about .about-content .image::before,
+    .about .about-content .image::after {
+        display: none;
     }
 }
 /* End About */
+/* Start Contact */
+.contact {
+    padding-top: var(--section-padding);
+    padding-bottom: calc(var(--section-padding + 60px));
+    background-color: var(--section-background);
+}
+.contact .text {
+    margin-top: var(--margin-for-each-section-content);
+    color: var(--secondary-color);
+    text-align: center;
+}
+.contact .text a {
+    color: var(--main-color);
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+}
+@media (max-width: 767px) {
+    .contact .text h1 {
+        font-size: 20px;
+    }
+    .contact .text a {
+        color: var(--main-color);
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+.contact .text .social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact .text .social * {
+    padding: 10px;
+}
+/* Start Contact */
+/* Start Footer */
+.footer {
+    background-color: var(--secondary-color);
+}
+.footer .text {
+    color: white;
+    text-align: center;
+    line-height: 1.6;
+    font-size: 20px;
+}
+.footer .text p {
+    display: inline;
+    font-weight: bold;
+    color: var(--main-color);
+}
+/* End Footer */
